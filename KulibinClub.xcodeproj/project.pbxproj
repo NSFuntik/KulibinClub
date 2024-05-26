@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F58C01BA2C037744001D76F0 /* KulibinClubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C01B92C037744001D76F0 /* KulibinClubApp.swift */; };
+		F58C01BC2C037744001D76F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C01BB2C037744001D76F0 /* ContentView.swift */; };
+		F58C01BE2C037744001D76F0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C01BD2C037744001D76F0 /* Item.swift */; };
+		F58C01C02C037745001D76F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58C01BF2C037745001D76F0 /* Assets.xcassets */; };
+		F58C01C32C037745001D76F0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58C01C22C037745001D76F0 /* Preview Assets.xcassets */; };
+		F58C01CD2C037745001D76F0 /* KulibinClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C01CC2C037745001D76F0 /* KulibinClubTests.swift */; };
+		F58C01D72C037746001D76F0 /* KulibinClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C01D62C037746001D76F0 /* KulibinClubUITests.swift */; };
+		F58C01D92C037746001D76F0 /* KulibinClubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C01D82C037746001D76F0 /* KulibinClubUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F58C01C92C037745001D76F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F58C01AE2C037744001D76F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F58C01B52C037744001D76F0;
+			remoteInfo = KulibinClub;
+		};
+		F58C01D32C037745001D76F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F58C01AE2C037744001D76F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F58C01B52C037744001D76F0;
+			remoteInfo = KulibinClub;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F58C01B62C037744001D76F0 /* KulibinClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KulibinClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F58C01B92C037744001D76F0 /* KulibinClubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KulibinClubApp.swift; sourceTree = "<group>"; };
+		F58C01BB2C037744001D76F0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F58C01BD2C037744001D76F0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F58C01BF2C037745001D76F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F58C01C22C037745001D76F0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F58C01C82C037745001D76F0 /* KulibinClubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KulibinClubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F58C01CC2C037745001D76F0 /* KulibinClubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KulibinClubTests.swift; sourceTree = "<group>"; };
+		F58C01D22C037745001D76F0 /* KulibinClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KulibinClubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F58C01D62C037746001D76F0 /* KulibinClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KulibinClubUITests.swift; sourceTree = "<group>"; };
+		F58C01D82C037746001D76F0 /* KulibinClubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KulibinClubUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F58C01B32C037744001D76F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58C01C52C037745001D76F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58C01CF2C037745001D76F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F58C01AD2C037744001D76F0 = {
+			isa = PBXGroup;
+			children = (
+				F58C01B82C037744001D76F0 /* KulibinClub */,
+				F58C01CB2C037745001D76F0 /* KulibinClubTests */,
+				F58C01D52C037746001D76F0 /* KulibinClubUITests */,
+				F58C01B72C037744001D76F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F58C01B72C037744001D76F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F58C01B62C037744001D76F0 /* KulibinClub.app */,
+				F58C01C82C037745001D76F0 /* KulibinClubTests.xctest */,
+				F58C01D22C037745001D76F0 /* KulibinClubUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F58C01B82C037744001D76F0 /* KulibinClub */ = {
+			isa = PBXGroup;
+			children = (
+				F58C01B92C037744001D76F0 /* KulibinClubApp.swift */,
+				F58C01BB2C037744001D76F0 /* ContentView.swift */,
+				F58C01BD2C037744001D76F0 /* Item.swift */,
+				F58C01BF2C037745001D76F0 /* Assets.xcassets */,
+				F58C01C12C037745001D76F0 /* Preview Content */,
+			);
+			path = KulibinClub;
+			sourceTree = "<group>";
+		};
+		F58C01C12C037745001D76F0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F58C01C22C037745001D76F0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F58C01CB2C037745001D76F0 /* KulibinClubTests */ = {
+			isa = PBXGroup;
+			children = (
+				F58C01CC2C037745001D76F0 /* KulibinClubTests.swift */,
+			);
+			path = KulibinClubTests;
+			sourceTree = "<group>";
+		};
+		F58C01D52C037746001D76F0 /* KulibinClubUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F58C01D62C037746001D76F0 /* KulibinClubUITests.swift */,
+				F58C01D82C037746001D76F0 /* KulibinClubUITestsLaunchTests.swift */,
+			);
+			path = KulibinClubUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F58C01B52C037744001D76F0 /* KulibinClub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F58C01DC2C037746001D76F0 /* Build configuration list for PBXNativeTarget "KulibinClub" */;
+			buildPhases = (
+				F58C01B22C037744001D76F0 /* Sources */,
+				F58C01B32C037744001D76F0 /* Frameworks */,
+				F58C01B42C037744001D76F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KulibinClub;
+			productName = KulibinClub;
+			productReference = F58C01B62C037744001D76F0 /* KulibinClub.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F58C01C72C037745001D76F0 /* KulibinClubTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F58C01DF2C037746001D76F0 /* Build configuration list for PBXNativeTarget "KulibinClubTests" */;
+			buildPhases = (
+				F58C01C42C037745001D76F0 /* Sources */,
+				F58C01C52C037745001D76F0 /* Frameworks */,
+				F58C01C62C037745001D76F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F58C01CA2C037745001D76F0 /* PBXTargetDependency */,
+			);
+			name = KulibinClubTests;
+			productName = KulibinClubTests;
+			productReference = F58C01C82C037745001D76F0 /* KulibinClubTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F58C01D12C037745001D76F0 /* KulibinClubUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F58C01E22C037746001D76F0 /* Build configuration list for PBXNativeTarget "KulibinClubUITests" */;
+			buildPhases = (
+				F58C01CE2C037745001D76F0 /* Sources */,
+				F58C01CF2C037745001D76F0 /* Frameworks */,
+				F58C01D02C037745001D76F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F58C01D42C037745001D76F0 /* PBXTargetDependency */,
+			);
+			name = KulibinClubUITests;
+			productName = KulibinClubUITests;
+			productReference = F58C01D22C037745001D76F0 /* KulibinClubUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F58C01AE2C037744001D76F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					F58C01B52C037744001D76F0 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					F58C01C72C037745001D76F0 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = F58C01B52C037744001D76F0;
+					};
+					F58C01D12C037745001D76F0 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = F58C01B52C037744001D76F0;
+					};
+				};
+			};
+			buildConfigurationList = F58C01B12C037744001D76F0 /* Build configuration list for PBXProject "KulibinClub" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F58C01AD2C037744001D76F0;
+			productRefGroup = F58C01B72C037744001D76F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F58C01B52C037744001D76F0 /* KulibinClub */,
+				F58C01C72C037745001D76F0 /* KulibinClubTests */,
+				F58C01D12C037745001D76F0 /* KulibinClubUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F58C01B42C037744001D76F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F58C01C32C037745001D76F0 /* Preview Assets.xcassets in Resources */,
+				F58C01C02C037745001D76F0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58C01C62C037745001D76F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58C01D02C037745001D76F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F58C01B22C037744001D76F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F58C01BC2C037744001D76F0 /* ContentView.swift in Sources */,
+				F58C01BE2C037744001D76F0 /* Item.swift in Sources */,
+				F58C01BA2C037744001D76F0 /* KulibinClubApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58C01C42C037745001D76F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F58C01CD2C037745001D76F0 /* KulibinClubTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58C01CE2C037745001D76F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F58C01D72C037746001D76F0 /* KulibinClubUITests.swift in Sources */,
+				F58C01D92C037746001D76F0 /* KulibinClubUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F58C01CA2C037745001D76F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F58C01B52C037744001D76F0 /* KulibinClub */;
+			targetProxy = F58C01C92C037745001D76F0 /* PBXContainerItemProxy */;
+		};
+		F58C01D42C037745001D76F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F58C01B52C037744001D76F0 /* KulibinClub */;
+			targetProxy = F58C01D32C037745001D76F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F58C01DA2C037746001D76F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F58C01DB2C037746001D76F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F58C01DD2C037746001D76F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KulibinClub/Preview Content\"";
+				DEVELOPMENT_TEAM = UB936SP78M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.nsfuntik.KulibinClub;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F58C01DE2C037746001D76F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KulibinClub/Preview Content\"";
+				DEVELOPMENT_TEAM = UB936SP78M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.nsfuntik.KulibinClub;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F58C01E02C037746001D76F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UB936SP78M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.nsfuntik.KulibinClubTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KulibinClub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KulibinClub";
+			};
+			name = Debug;
+		};
+		F58C01E12C037746001D76F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UB936SP78M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.nsfuntik.KulibinClubTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KulibinClub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KulibinClub";
+			};
+			name = Release;
+		};
+		F58C01E32C037746001D76F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UB936SP78M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.nsfuntik.KulibinClubUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KulibinClub;
+			};
+			name = Debug;
+		};
+		F58C01E42C037746001D76F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UB936SP78M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.nsfuntik.KulibinClubUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KulibinClub;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F58C01B12C037744001D76F0 /* Build configuration list for PBXProject "KulibinClub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F58C01DA2C037746001D76F0 /* Debug */,
+				F58C01DB2C037746001D76F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F58C01DC2C037746001D76F0 /* Build configuration list for PBXNativeTarget "KulibinClub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F58C01DD2C037746001D76F0 /* Debug */,
+				F58C01DE2C037746001D76F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F58C01DF2C037746001D76F0 /* Build configuration list for PBXNativeTarget "KulibinClubTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F58C01E02C037746001D76F0 /* Debug */,
+				F58C01E12C037746001D76F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F58C01E22C037746001D76F0 /* Build configuration list for PBXNativeTarget "KulibinClubUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F58C01E32C037746001D76F0 /* Debug */,
+				F58C01E42C037746001D76F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F58C01AE2C037744001D76F0 /* Project object */;
+}
