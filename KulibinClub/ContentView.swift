@@ -1,61 +1,83 @@
-//
-//  ContentView.swift
-//  KulibinClub
-//
-//  Created by Dmitry Mikhaylov on 26.05.2024.
-//
-
+import Firebase
+import FirebaseAuth
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+@State private var isLoggedIn: Bool
+@State var sideMenu: Bool = false
+@StateObject var notificationService = NotificationService()
+@State var path: NavigationPath = NavigationPath()
 
-    var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
+var body: some View {
+    NavigationStack(path: $path) {
+        ZStack {
+            if isLoggedIn {
+                /// Начальная страница приложения
+                MainView()
+            } else {
+                /// Авторизация
+                AuthView(isLoggedIn: $isLoggedIn)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+
+            /// Боковое меню навигационных разделов
+            SideMenu(
+                isShowing: $sideMenu, edgeTransition: .move(edge: .leading),
+                content: SideMenuContent(
+                    isLoggedIn: $isLoggedIn, isShowing: $sideMenu,
+                    path: $path,
+                    notificationService: NotificationService())
+            )
+        }
+        .toolbar(content: { ToolbarItem(placement: .navigation) { HeaderView(sideMenu: $sideMenu) } })
+        .navigationDestination(for: SideMenuTab.self) { tab in
+            switch tab {
+            case .Главная: Button("Главная") { sideMenu.toggle() }
+            case .Курсы: Text(tab.rawValue)
+            case .Робототехника: CourseListView(
+                courses: exampleCourses, category: "Робототехника"
+            )
+            case .Программирование: CourseListView(
+                courses: exampleCourses, category: "Программирование"
+            )
+            case .КомпьютернаяГрафикаи3D: CourseListView(
+                courses: exampleCourses, category: "Компьютерная графика и 3D"
+            )
+            case .КурсыДляВзрослых: CourseListView(
+                courses: exampleCourses, category: "Курсы для взрослых"
+            )
+            case .Уведомления: NotificationView(notificationService: notificationService)
+            case .оКлубе: Text(tab.rawValue)
+            case .ИсторияСоздания: HistoryView()
+            case .Новости: NewsListView()
+            case .Фотогалерея: Text(tab.rawValue)
+            case .КалендарьСобытий: EventListView()
+            case .БонуснаяПрограмма: BonusListView()
+            case .ВопросыИответы: FAQListView()
+            case .Каталог: ProductListView()
+            case .Документы: Text(tab.rawValue)
+            case .СведенияОбОбразовательнойОрганизации: Text(tab.rawValue)
+            case .СоглашениеоКонфиденциальности: Text(tab.rawValue)
+            case .ОбработчикиПерсональныхДанных: Text(tab.rawValue)
+            case .Партнеры: Text(tab.rawValue)
+            case .ОбщественныйФонд: Text(tab.rawValue)
+            case .НашиПартнеры: Text(tab.rawValue)
+            case .Настройки: SettingsView()
+            case .ДоговорОферта: Text(tab.rawValue)
             }
-        } detail: {
-            Text("Select an item")
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
+    .animation(.smooth, value: sideMenu).animation(.smooth, value: path).animation(.smooth, value: isLoggedIn)
     }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
+    
+    init() {
+        let firebaseAuth = Auth.auth()
+        do {
+            firebaseAuth.signInAnonymously()
+            self.isLoggedIn = true
         }
     }
 }
 
-#Preview {
+#Preview(body: {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
-}
+})

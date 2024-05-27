@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Dmitry Mikhaylov on 26.05.2024.
+  
+*/
+"welcome_message" = "Добро пожаловать в Kulibin.club!";
+"view_events" = "Просмотреть мероприятия";
+"profile" = "Мой профиль";
+"login" = "Войти";
+"register" = "Регистрация";
+"sign_in" = "Вход";
+"sign_up" = "Регистрация";
+"logout" = "Выйти";
+"email_placeholder" = "Email";
+"password_placeholder" = "Пароль";
+"fill_all_fields" = "Пожалуйста, заполните все поля";
+"login_error" = "Ошибка входа: ";
+"register_error" = "Ошибка регистрации: ";
+"trial_lesson" = "Запись на пробное занятие";
+"register_for_lesson" = "Записаться на занятие";
+"register_success" = "Вы успешно зарегистрировались";
+"register_error" = "Произошла ошибка при регистрации";
+"forgot_password" = "Забыли пароль?";
+"password_reset" = "Восстановление пароля";
+"password_reset_success" = "Ваш пароль был успешно восстановлен";
+"password_reset_error" = "Произошла ошибка при восстановлении пароля";
+"password_reset_subject" = "Восстановление пароля";
+"password_reset_message" = "Ваш пароль был успешно восстановлен";
+
