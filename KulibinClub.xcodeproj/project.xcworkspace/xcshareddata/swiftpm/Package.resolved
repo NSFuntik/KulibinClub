@@ -1,5 +1,5 @@
 {
-  "originHash" : "c63c63846d9c539229e96de38d6af51417e28c0ee9a0bc48bd0f0f19d923c329",
+  "originHash" : "809e6a4c2d9b101596bf4c19e395aa4f8bfa48c9e947c016912479032ce00e37",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "076b241a625e25eac22f8849be256dfb960fcdfe",
         "version" : "10.19.1"
+      }
+    },
+    {
+      "identity" : "factory",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Factory.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2729a04b17946f6e7f475395db1695caa94eaee2"
       }
     },
     {
@@ -116,6 +125,15 @@
       "state" : {
         "revision" : "9f0c76544701845ad98716f3f6a774a892152bcb",
         "version" : "1.26.0"
+      }
+    },
+    {
+      "identity" : "swiftpro",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NSFuntik/SwiftPro",
+      "state" : {
+        "branch" : "dev",
+        "revision" : "7abbe28ba91add2a9ce26e48fb5a32f145daccf2"
       }
     }
   ],
