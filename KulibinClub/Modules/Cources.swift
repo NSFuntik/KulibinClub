@@ -72,11 +72,11 @@ struct CourseListView: View {
         .toolbarTitleDisplayMode(.large)
         .navigationTitle("Курсы")
         .toolbar(content: { TrialButton(popover: $popover).labelStyle(.titleOnly) })
-        .popup(alignment: .bottom, isPresented: $popover, content: { p in
-            if p { ZStack(alignment: .center) {
-                TrialLessonForm().shadow(.elevated)
-            } }
-        }).animation(.bouncy, value: popover)
+//        .popup(alignment: .bottom, isPresented: $popover, content: { p in
+//            if p { ZStack(alignment: .center) {
+//                TrialLessonForm().shadow(.elevated)
+//            } }
+//        }).animation(.bouncy, value: popover)
     }
 
     struct CourseView: View {

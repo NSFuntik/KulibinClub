@@ -1,0 +1,6 @@
+framework module FlomniChatCore {
+  umbrella header "FlomniChatCore.h"
+  export *
+
+  module * { export * }
+}

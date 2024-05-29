@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		F505A2D22C0673E500BE1933 /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505A2D12C0673E500BE1933 /* HTMLContent.swift */; };
 		F505A2D42C06C5E400BE1933 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F505A2D32C06C5E400BE1933 /* Localizable.xcstrings */; };
-		F505A2D72C07529800BE1933 /* SwiftPro in Frameworks */ = {isa = PBXBuildFile; productRef = F505A2D62C07529800BE1933 /* SwiftPro */; };
+		F505A2E12C0758B400BE1933 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505A2E02C0758B400BE1933 /* FloatingTextField.swift */; };
+		F505A2E42C075B5800BE1933 /* FlomniChatCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F505A2E22C075B5100BE1933 /* FlomniChatCore.framework */; platformFilter = ios; };
+		F505A2E52C075B5800BE1933 /* FlomniChatCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F505A2E22C075B5100BE1933 /* FlomniChatCore.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F55B746F2C03F0B900A572AD /* TrialLessonForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B746E2C03F0B900A572AD /* TrialLessonForm.swift */; };
-		F55B74722C03FCDD00A572AD /* SwiftPro in Frameworks */ = {isa = PBXBuildFile; productRef = F55B74712C03FCDD00A572AD /* SwiftPro */; };
 		F585EBEA2C05721D001F3985 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585EBE92C05721D001F3985 /* FirestoreService.swift */; };
 		F585EBED2C05765D001F3985 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F585EBEC2C05765D001F3985 /* FirebaseAnalyticsSwift */; };
 		F585EBEF2C05765D001F3985 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F585EBEE2C05765D001F3985 /* FirebaseAuth */; };
@@ -61,9 +62,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F505A2DC2C07573100BE1933 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F505A2E52C075B5800BE1933 /* FlomniChatCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F505A2D12C0673E500BE1933 /* HTMLContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLContent.swift; sourceTree = "<group>"; };
 		F505A2D32C06C5E400BE1933 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F505A2E02C0758B400BE1933 /* FloatingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
+		F505A2E22C075B5100BE1933 /* FlomniChatCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FlomniChatCore.framework; sourceTree = "<group>"; };
 		F55B746E2C03F0B900A572AD /* TrialLessonForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialLessonForm.swift; sourceTree = "<group>"; };
 		F585EBE92C05721D001F3985 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		F58C01B62C037744001D76F0 /* KulibinClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KulibinClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,12 +123,11 @@
 			files = (
 				F585EBF52C05765D001F3985 /* FirebaseMessaging in Frameworks */,
 				F585EBF32C05765D001F3985 /* FirebaseFirestoreSwift in Frameworks */,
+				F505A2E42C075B5800BE1933 /* FlomniChatCore.framework in Frameworks */,
 				F585EBED2C05765D001F3985 /* FirebaseAnalyticsSwift in Frameworks */,
 				F585EBF12C05765D001F3985 /* FirebaseCrashlytics in Frameworks */,
 				F585EBF72C05765D001F3985 /* FirebaseStorage in Frameworks */,
 				F585EBEF2C05765D001F3985 /* FirebaseAuth in Frameworks */,
-				F505A2D72C07529800BE1933 /* SwiftPro in Frameworks */,
-				F55B74722C03FCDD00A572AD /* SwiftPro in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +182,7 @@
 			children = (
 				F58C01F02C0377C0001D76F0 /* KulibinClub.entitlements */,
 				F58C02072C037993001D76F0 /* KulibinClubApp.swift */,
+				F505A2E22C075B5100BE1933 /* FlomniChatCore.framework */,
 				F58C02042C037993001D76F0 /* ContentView.swift */,
 				F55B746D2C03F09B00A572AD /* Main Page */,
 				F58C022F2C03A3ED001D76F0 /* SideMenu.swift */,
@@ -175,6 +192,7 @@
 				F58C020F2C037D27001D76F0 /* SettingsView.swift */,
 				F58C02062C037993001D76F0 /* AuthView.swift */,
 				F585EBE92C05721D001F3985 /* FirestoreService.swift */,
+				F505A2E02C0758B400BE1933 /* FloatingTextField.swift */,
 				F505A2D12C0673E500BE1933 /* HTMLContent.swift */,
 				F58C02032C037993001D76F0 /* Models.swift */,
 				F58C02052C037993001D76F0 /* ViewModels.swift */,
@@ -247,6 +265,7 @@
 				F58C01B22C037744001D76F0 /* Sources */,
 				F58C01B32C037744001D76F0 /* Frameworks */,
 				F58C01B42C037744001D76F0 /* Resources */,
+				F505A2DC2C07573100BE1933 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,14 +273,12 @@
 			);
 			name = KulibinClub;
 			packageProductDependencies = (
-				F55B74712C03FCDD00A572AD /* SwiftPro */,
 				F585EBEC2C05765D001F3985 /* FirebaseAnalyticsSwift */,
 				F585EBEE2C05765D001F3985 /* FirebaseAuth */,
 				F585EBF02C05765D001F3985 /* FirebaseCrashlytics */,
 				F585EBF22C05765D001F3985 /* FirebaseFirestoreSwift */,
 				F585EBF42C05765D001F3985 /* FirebaseMessaging */,
 				F585EBF62C05765D001F3985 /* FirebaseStorage */,
-				F505A2D62C07529800BE1933 /* SwiftPro */,
 			);
 			productName = KulibinClub;
 			productReference = F58C01B62C037744001D76F0 /* KulibinClub.app */;
@@ -338,7 +355,6 @@
 			mainGroup = F58C01AD2C037744001D76F0;
 			packageReferences = (
 				F585EBEB2C05765D001F3985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				F505A2D52C07529800BE1933 /* XCRemoteSwiftPackageReference "SwiftPro" */,
 			);
 			productRefGroup = F58C01B72C037744001D76F0 /* Products */;
 			projectDirPath = "";
@@ -388,6 +404,7 @@
 				F58C02102C037D27001D76F0 /* SettingsView.swift in Sources */,
 				F58C02212C038421001D76F0 /* Product.swift in Sources */,
 				F58C02302C03A3ED001D76F0 /* SideMenu.swift in Sources */,
+				F505A2E12C0758B400BE1933 /* FloatingTextField.swift in Sources */,
 				F58C020B2C037994001D76F0 /* AuthView.swift in Sources */,
 				F58C021F2C0383C6001D76F0 /* FAQ.swift in Sources */,
 				F58C020A2C037994001D76F0 /* ViewModels.swift in Sources */,
@@ -572,8 +589,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"KulibinClub/Preview Content\"";
 				DEVELOPMENT_TEAM = UB936SP78M;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KulibinClub",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KulibinClub/Resources/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For camera epta blya";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -606,8 +628,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"KulibinClub/Preview Content\"";
 				DEVELOPMENT_TEAM = UB936SP78M;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KulibinClub",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KulibinClub/Resources/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For camera epta blya";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -747,14 +774,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F505A2D52C07529800BE1933 /* XCRemoteSwiftPackageReference "SwiftPro" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/NSFuntik/SwiftPro";
-			requirement = {
-				branch = dev;
-				kind = branch;
-			};
-		};
 		F585EBEB2C05765D001F3985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -766,15 +785,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F505A2D62C07529800BE1933 /* SwiftPro */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F505A2D52C07529800BE1933 /* XCRemoteSwiftPackageReference "SwiftPro" */;
-			productName = SwiftPro;
-		};
-		F55B74712C03FCDD00A572AD /* SwiftPro */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SwiftPro;
-		};
 		F585EBEC2C05765D001F3985 /* FirebaseAnalyticsSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F585EBEB2C05765D001F3985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

@@ -6,7 +6,7 @@
 //
 
 import FirebaseAuth
-import SwiftPro
+//import SwiftPro
 import SwiftUI
 
 #Preview(body: {
@@ -117,15 +117,15 @@ struct SideMenuContent: View {
         }
 
         public var label: some View {
-            Label(route.rawValue, systemImage: symbol.rawValue)
+            Label(route.rawValue, systemImage: route.MenuIcon)
                 .labelStyle(SideBarCellStyle())
                 .foregroundStyle(.accent.secondary.opacity(0.88))
                 .listRowBackground(Color.clear).padding(.leading, -16)
         }
 
-        var symbol: SFSymbol {
-            SFSymbol.findSymbol(by: route.MenuIcon) ?? .folder
-        }
+//        var symbol: Image {
+//            Image(systemName: )
+//        }
     }
 
     /**

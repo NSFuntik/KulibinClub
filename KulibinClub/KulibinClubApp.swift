@@ -6,12 +6,23 @@ import FirebaseMessaging
 import SwiftUI
 import UIKit
 import UserNotifications
+import FlomniChatCore
 @main
 struct KulibinClubApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            ContentView().tint(.accent).preferredColorScheme(.light)
+            { () -> CommonContentView in
+                FlomniChatProvider.defaultValue = Container.shared.flomniChat.register(factory: {
+                    FlomniChat(
+                        apiKey: "5d0cd1707741de0009e061cb",
+                        appGroup: "group.com.flomni.chat",
+                        userId: "c79f58b0-527d-4e75-ba58-6fbc32c6c81a"
+                    )
+                }).resolve()
+                return CommonContentView()
+            }()
+//            ContentView().tint(.accent).preferredColorScheme(.light)
         }
         .commands {
             ToolbarCommands() // <- Turns on the toolbar customization

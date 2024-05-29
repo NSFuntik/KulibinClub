@@ -1,6 +1,5 @@
 import Firebase
 import FirebaseAuth
-import SwiftPro
 import SwiftUI
 struct ContentView: View {
     @State private var isLoggedIn: Bool
@@ -17,6 +16,7 @@ struct ContentView: View {
                 } else {
                     /// Авторизация
                     AuthView(isLoggedIn: $isLoggedIn)
+                   
                 }
                 /// Боковое меню навигационных разделов
                 SideMenu(isShowing: $sideMenu, path: $path, edgeTransition: .move(edge: .leading))

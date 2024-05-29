@@ -5,15 +5,8 @@
 //  Created by Dmitry Mikhaylov on 27.05.2024.
 //
 
-import SwiftPro
-import SwiftUI
 
-#Preview {
-    Color.accentColor
-        .popup(alignment: .top, isPresented: .constant(true)) { _ in
-            TrialLessonForm().padding(8).shadow(.elevated)
-        }
-}
+import SwiftUI
 
 struct TrialLessonForm: View {
     @State private var form = TrialLesson()

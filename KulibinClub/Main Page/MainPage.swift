@@ -6,7 +6,6 @@
 //
 
 import FirebaseAuth
-import SwiftPro
 import SwiftUI
 #Preview {
     NavigationStack {
