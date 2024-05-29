@@ -1,0 +1,509 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "**Email**: info@kulibin.club" : {
+
+    },
+    "**Адрес**: г. Москва, ул. Пушкина, д. 10" : {
+
+    },
+    "**Телефон**: +7 (123) 456-78-90" : {
+
+    },
+    "%@" : {
+
+    },
+    "• %@" : {
+
+    },
+    "email_placeholder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
+    "fill_all_fields" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please fill all fields"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пожалуйста, заполните все поля"
+          }
+        }
+      }
+    },
+    "forgot_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Забыли пароль?"
+          }
+        }
+      }
+    },
+    "Kulibin club - это" : {
+
+    },
+    "Kulibin.club — это клуб детского научно-технического творчества, где дети разных возрастов могут заниматься робототехникой, программированием и другими интересными направлениями. Клуб был основан в 2013 году и с тех пор активно участвует в различных соревнованиях и мероприятиях." : {
+
+    },
+    "login" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Войти"
+          }
+        }
+      }
+    },
+    "login_error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login Error: "
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка входа: "
+          }
+        }
+      }
+    },
+    "logout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logout"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выйти"
+          }
+        }
+      }
+    },
+    "password_placeholder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароль"
+          }
+        }
+      }
+    },
+    "password_reset" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Восстановление пароля"
+          }
+        }
+      }
+    },
+    "password_reset_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Произошла ошибка при восстановлении пароля"
+          }
+        }
+      }
+    },
+    "password_reset_message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваш пароль был успешно восстановлен"
+          }
+        }
+      }
+    },
+    "password_reset_subject" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Восстановление пароля"
+          }
+        }
+      }
+    },
+    "password_reset_success" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваш пароль был успешно восстановлен"
+          }
+        }
+      }
+    },
+    "Picker" : {
+
+    },
+    "profile" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Profile"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мой профиль"
+          }
+        }
+      }
+    },
+    "register" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регистрация"
+          }
+        }
+      }
+    },
+    "register_error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registration Error: "
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Произошла ошибка при регистрации"
+          }
+        }
+      }
+    },
+    "register_for_lesson" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register for the lesson"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записаться на занятие"
+          }
+        }
+      }
+    },
+    "register_success" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы успешно зарегистрировались"
+          }
+        }
+      }
+    },
+    "sign_in" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign In"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вход"
+          }
+        }
+      }
+    },
+    "sign_in_to_continue" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign in to continue"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Войдите в свой аккаунт, чтобы продолжить."
+          }
+        }
+      }
+    },
+    "sign_up" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign Up"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регистрация"
+          }
+        }
+      }
+    },
+    "trial_lesson" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register for a trial lesson"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запись на пробное занятие"
+          }
+        }
+      }
+    },
+    "view_events" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View Events"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Просмотреть мероприятия"
+          }
+        }
+      }
+    },
+    "welcome_message" : {
+      "comment" : "Localizable.strings\n  \n\n  Created by Dmitry Mikhaylov on 26.05.2024.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to Kulibin.club!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добро пожаловать в Kulibin.club!"
+          }
+        }
+      }
+    },
+    "Бонусная программа" : {
+
+    },
+    "Возраст" : {
+
+    },
+    "Возраст: %@" : {
+
+    },
+    "Вопросы и ответы" : {
+
+    },
+    "Выберите город" : {
+
+    },
+    "Выберите дату" : {
+
+    },
+    "Выберите направление" : {
+
+    },
+    "Выберите направление:" : {
+
+    },
+    "Выбор направления" : {
+
+    },
+    "Главная" : {
+
+    },
+    "Дальнейшие рекомендации" : {
+
+    },
+    "Дополнительные данные:" : {
+
+    },
+    "Задать вопрос" : {
+
+    },
+    "Записаться" : {
+
+    },
+    "Запишитесь на пробный урок" : {
+
+    },
+    "Запишитесь на урок" : {
+
+    },
+    "Имя" : {
+
+    },
+    "История создания" : {
+
+    },
+    "Каталог" : {
+
+    },
+    "Клуб научно-технического творчества" : {
+
+    },
+    "Контакты" : {
+
+    },
+    "Купить" : {
+
+    },
+    "Курсы" : {
+
+    },
+    "Мероприятия" : {
+
+    },
+    "Настройки" : {
+
+    },
+    "Новости" : {
+
+    },
+    "Описание" : {
+
+    },
+    "Оставить заявку" : {
+
+    },
+    "Ответим на любые вопросы и поможем с выбором" : {
+
+    },
+    "Подписки на уведомления" : {
+
+    },
+    "Подробнее" : {
+
+    },
+    "Попробовать бесплатно" : {
+
+    },
+    "Преимущества курса:" : {
+
+    },
+    "Преподаватели" : {
+
+    },
+    "Программа курса" : {
+
+    },
+    "Развивающие занятия для детей и подростков" : {
+
+    },
+    "Ребёнку в личном кабинете выставляются баллы. В июне каждого года, на эти баллы можно будет приобрести призы: брендированные кружки, футболки, ручки, блокноты, канцтовары, игрушки и другие." : {
+
+    },
+    "Собери бонусы и обменяй их на фирменные подарки в конце текущего учебного года до 30 июня!" : {
+
+    },
+    "События" : {
+
+    },
+    "Спецификации" : {
+
+    },
+    "Телефон" : {
+
+    },
+    "Уведомления" : {
+
+    },
+    "Характеристики" : {
+
+    },
+    "Часто задаваемые вопросы" : {
+
+    },
+    "Я согласен на обработку моих персональных данных в соответствии с условиями и договором-оферты" : {
+
+    }
+  },
+  "version" : "1.0"
+}

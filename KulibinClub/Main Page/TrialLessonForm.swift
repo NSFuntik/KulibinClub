@@ -5,8 +5,15 @@
 //  Created by Dmitry Mikhaylov on 27.05.2024.
 //
 
-import SwiftUI
 import SwiftPro
+import SwiftUI
+
+#Preview {
+    Color.accentColor
+        .popup(alignment: .top, isPresented: .constant(true)) { _ in
+            TrialLessonForm().padding(8).shadow(.elevated)
+        }
+}
 
 struct TrialLessonForm: View {
     @State private var form = TrialLesson()
@@ -17,14 +24,36 @@ struct TrialLessonForm: View {
     var body: some View {
         VStack(alignment: .center, spacing: 10, content: {
                    Section(header: Text("")) {
-                       TextField("Имя ребенка", text: $form.childName) .padding(10)
+                       FloatingTextField(
+                           placeholderText: "Имя ребенка",
+                           colorPalette: (primary: .accent, secondary: .about)
+                       ) { _, new in form.childName = new }
+                           .foregroundStyle(.accent, .accent.secondary)
+                           .background(.thickMaterial, in: Capsule())
 
-                       TextField("Имя родителя", text: $form.parentName) .padding(10)
+                       FloatingTextField(
+                           placeholderText: "Имя родителя",
+                           colorPalette: (primary: .accent, secondary: .about)
+                       ) { _, new in form.parentName = new }
+                           .foregroundStyle(.accent, .accent.secondary)
+                           .background(.thickMaterial, in: Capsule())
 
-                       TextField("Телефон", text: $form.phoneNumber) .padding(10).keyboardType(.phonePad)
+                       FloatingTextField(
+                           placeholderText: "Телефон",
+                           colorPalette: (primary: .accent, secondary: .about)
+                       ) { _, new in form.phoneNumber = new }
+                           .foregroundStyle(.accent, .accent.secondary)
+                           .background(.thickMaterial, in: Capsule())
+                           .keyboardType(.phonePad)
+                       FloatingTextField(
+                           placeholderText: "Электронная почта",
+                           colorPalette: (primary: .accent, secondary: .about)
+                       ) { _, new in form.email = new }
+                           .foregroundStyle(.accent, .accent.secondary)
+                           .background(.thickMaterial, in: Capsule())
+                           .keyboardType(.emailAddress)
 
-                       TextField("Электронная почта", text: $form.email) .padding(10).keyboardType(.emailAddress)
-                   }.textFieldStyle(RoundedBorderTextFieldStyle())
+                   }.padding(.top, 16) // .textFieldStyle(RoundedBorderTextFieldStyle())
                    LabeledContent {
                        Picker("Выберите направление", selection: $form.direction) {
                            ForEach(directions, id: \.self) { direction in
@@ -35,22 +64,20 @@ struct TrialLessonForm: View {
                        Text("Выберите направление:").font(.title3.weight(.medium)).foregroundStyle(.primary).multilineTextAlignment(.leading)
                    }.padding(10)
 
-                   LabeledContent {
-                       Picker("Выберите город", selection: $form.city) {
-                           ForEach(cities, id: \.self) { city in
-                               Text(city).tag(city)
-                           }
-                       }.pickerStyle(.automatic)
-                   } label: {
+                   LabeledContent { Picker("Выберите город", selection: $form.city) {
+                       ForEach(cities, id: \.self) { city in
+                           Text(city).tag(city)
+                       }
+                   }.pickerStyle(.automatic) } label: {
                        Text("Выберите направление:").font(.title3.weight(.medium)).foregroundStyle(.primary).multilineTextAlignment(.leading)
                    }.padding(10)
 
                    Toggle("Я согласен на обработку моих персональных данных в соответствии с условиями и договором-оферты", isOn: $form.isAgreed).font(.callout).padding(20)
 
-                   Button(action: { print("Form submitted: \(form)") /* Handle form submission */}) {
-                       Text("Попробовать бесплатно").font(.headline).padding()
+                   Button(action: { print("Form submitted: \(form)") /* Handle form submission */ }) {
+                       Text("Попробовать бесплатно").font(.title3.bold()).padding()
                    }
-                   .buttonStyle(BorderedProminentButtonStyle()).tint(.accentColor)
+                   .vibrantForeground(thick: true).background(form.isAgreed ? .accent : .secondary.opacity(0.33), in: Capsule()).shadow(form.isAgreed ? .elevated : .none)
                    .disabled(!form.isAgreed)
                })
                .padding(16).background(.regularMaterial, in: RoundedRectangle(cornerRadius: 14)).clipped().shadow(radius: 3)
@@ -61,10 +88,10 @@ struct TrialLessonForm: View {
                            .font(.title).foregroundStyle(.primary).bold().multilineTextAlignment(.center)
                        Spacer()
                    }
-                       .padding(4, 12)
-                       .background(.thickMaterial, in: .capsule(style: .continuous))
-                       .clipped().shadow(.sticker)
-                       .padding(.horizontal, 14).padding(.top, -33)
+                   .padding(4, 12)
+                   .background(.thinMaterial, in: .capsule(style: .continuous))
+                   .clipped() // .shadow(.sticker)
+                   .padding(.horizontal, 14).padding(.top, -33)
                }
     }
 

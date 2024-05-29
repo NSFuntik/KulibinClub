@@ -15,10 +15,9 @@ struct Course: Identifiable, Codable {
     var description: String = " "
     var details: String = " "
     var benefits: [String] = []
-    var schedule: String = " "
-    var ageGroup: String = " "
+    var schedule: String = "60 мин"
+    var ageGroup: String = "4-6 лет"
 }
-
 
 
 let exampleCourses: [Course] = [
@@ -26,19 +25,32 @@ let exampleCourses: [Course] = [
         category: "Робототехника",
         title: "Основы конструирования и программирования",
         description: "WeDo, SPIKE, KIK, Mindstorms EV3, Arduino, RoboBasics",
+        details: "Курс не предполагает каких-то начальных знаний у ребят – главное, чтобы было желание заниматься. Ребята могут заниматься индивидуально или в парах - позволяет развивать навыки общения и командной работы.",
         benefits: [
             "Развитие моторики и координации движений",
             "Улучшение логического мышления",
             "Социальное развитие",
         ],
-        schedule: "60 часов",
+        schedule: "90 мин",
         ageGroup: "6-8 лет"
     ),
+    Course(category: "Робототехника", title: "Scratch", description: "Игровое программирование"),
+
+    Course(category: "Робототехника", title: "SPIKE", description: "Игровое программирование"),
+    Course(category: "Робототехника", title: "Mindstorms EV3", description: "Игровое программирование"),
+    Course(category: "Робототехника", title: "РобоБиоКласс", description: "Игровое программирование"),
+    Course(category: "Робототехника", title: "Arduino", description: "Игровое программирование"),
+
     Course(category: "Программирование", title: "Scratch", description: "Игровое программирование"),
     Course(category: "Программирование", title: "Python", description: "Web программирование и дизайн"),
     Course(category: "Программирование", title: "Web программирование и дизайн", description: "Изучаем веб-дизайн и разработку"),
     Course(category: "Программирование", title: "Мультимедийные элементы и игры", description: "Создание игр и интерактивных элементов"),
-    Course(category: "Компьютерная графика и 3D", title: "3D моделирование", description: "Малые архитектурные формы"),
+    Course(category: "Программирование", title: "Старт в IT", description: "Создание игр и интерактивных элементов"),
+    Course(category: "Программирование", title: "Искусственный интелекс и нейросети", description: " Ребята могут заниматься индивидуально или в парах - позволяет развивать навыки общения и командной работы."),
+
+    Course(category: "Компьютерная графика и 3D", title: "3D моделирование", description: "Развитие моторики и координации движений"),
+    Course(category: "Компьютерная графика и 3D", title: "Малая архитектурная школа", description: "Малые архитектурные формы"),
+
     Course(category: "Курсы для взрослых", title: "Курсы повышения квалификации", description: "Повышение квалификации для взрослых"),
 ]
 
@@ -109,7 +121,7 @@ struct FAQ: Identifiable, Codable {
 }
 
 /// Представляет обновление новостей.
-struct News: Identifiable, Codable, Hashable {
+struct News: Identifiable, Codable, Hashable, FirestoreIdentifiable{
     @DocumentID var id: String? = UUID().uuidString
     var date: String? = " "
     var title: String? = " "

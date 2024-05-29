@@ -13,7 +13,31 @@ struct KulibinClubApp: App {
         WindowGroup {
             ContentView().tint(.accent).preferredColorScheme(.light)
         }
+        .commands {
+            ToolbarCommands() // <- Turns on the toolbar customization
+        }
     }
+}
+
+struct SideBarBindingKey: EnvironmentKey {
+  static var defaultValue: Binding<Bool> = .constant(false)
+}
+
+extension EnvironmentValues {
+  var sideBar: Binding<Bool> {
+    get { self[SideBarBindingKey.self] }
+    set { self[SideBarBindingKey.self] = newValue }
+  }
+}
+struct FSBoolBindingKey: EnvironmentKey {
+  static var defaultValue: Binding<Bool> = .constant(false)
+}
+
+extension EnvironmentValues {
+  var fsBoolBinding: Binding<Bool> {
+    get { self[FSBoolBindingKey.self] }
+    set { self[FSBoolBindingKey.self] = newValue }
+  }
 }
 
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
@@ -103,11 +127,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 }
 
-
 import Network
 
 class NetworkMonitor: ObservableObject {
-    
     private let monitor = NWPathMonitor()
     private let queue = DispatchQueue(label: "NetworkMonitor")
     @Published var isConnected: Bool = false
@@ -137,7 +159,7 @@ extension EnvironmentValues {
 
 struct ScreenModifier: ViewModifier {
     @State private var screen: UIScreen = UIScreen.main
-    
+
     func body(content: Content) -> some View {
         content
             .environment(\.screen, screen)
@@ -153,25 +175,25 @@ struct ScreenModifier: ViewModifier {
 
 struct WindowReader: UIViewControllerRepresentable {
     var callback: (UIWindow?) -> Void
-    
+
     func makeUIViewController(context: Context) -> UIViewController {
         WindowReaderViewController(callback: callback)
     }
-    
+
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) { }
-    
+
     class WindowReaderViewController: UIViewController {
         var callback: (UIWindow?) -> Void
-        
+
         init(callback: @escaping (UIWindow?) -> Void) {
             self.callback = callback
             super.init(nibName: nil, bundle: nil)
         }
-        
+
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
-        
+
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
             callback(view.window)

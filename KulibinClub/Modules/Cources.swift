@@ -6,28 +6,77 @@
 //
 
 import SwiftUI
+extension Array {
+    func groupBy<T: Hashable>(key: (Element) -> T) -> [T: [Element]] {
+        var dict = [T: [Element]]()
+        for item in self {
+            let key = key(item)
+            if case nil = dict[key]?.append(item) {
+                dict[key] = [item]
+            }
+        }
+        return dict
+    }
+}
+
+#Preview(body: {
+    NavigationStack {
+        CourseListView(category: "Робототехника")
+            .toolbar(content: { ToolbarItem(placement: .navigation) {
+                HeaderView(sideMenu: .constant(false))
+            } })
+    }
+})
+struct TrialButton: View {
+    @Binding var popover: Bool
+    var body: some View {
+        Button(action: {
+            popover.toggle()
+        }, label: {
+            Label("Записаться", systemImage: "pencil.and.outline")
+                .symbolRenderingMode(.hierarchical)
+                .vibrantForeground(thick: true).labelStyle(.titleAndIcon)
+                .font(.title2.weight(.semibold).monospaced())
+                .padding(8, 24)
+                .materialBackground(with: .systemUltraThinMaterial, blur: 1, clipped: Capsule(), filled: .accentColor.opacity(0.44), bordered: .accent, width: 0.5)
+
+        }).frame(width: .screenWidth, alignment: .center)
+            .environment(\.fsBoolBinding, $popover)
+    }
+}
 
 struct CourseListView: View {
+    @State var popover: Bool = false
     var courses: [Course] = exampleCourses
     let category: String
+    var groupedCourses: [String: [Course]] {
+        courses.groupBy { $0.category }
+    }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                Text(category)
-                    .font(.largeTitle)
-                    .padding(.top)
-                ForEach(courses.filter { $0.category == category }) { course in
-                    NavigationLink(destination: CourseDetailView(course: course)) {
-                        CourseView(course: course)
+        List {
+            ForEach(Array(courses.groupBy(key: { $0.category }).keys), id: \.self) { (courseKey: String) in
+                if let courcesForCategory = groupedCourses[courseKey] {
+                    Section(header: Text(courcesForCategory.first?.category ?? "Unknown Header")) {
+                        ForEach(courcesForCategory) { course in
+                            NavigationLink(destination: CourseDetailView(course: course)) {
+                                CourseView(course: course)
+                            }
+                        }
                     }
-                    .padding(.bottom, 10)
                 }
-                Spacer()
             }
-            .padding()
         }
-        .navigationTitle(category)
+
+        .listStyle(.insetGrouped).ignoresSafeArea(.container, edges: .bottom)
+        .toolbarTitleDisplayMode(.large)
+        .navigationTitle("Курсы")
+        .toolbar(content: { TrialButton(popover: $popover).labelStyle(.titleOnly) })
+        .popup(alignment: .bottom, isPresented: $popover, content: { p in
+            if p { ZStack(alignment: .center) {
+                TrialLessonForm().shadow(.elevated)
+            } }
+        }).animation(.bouncy, value: popover)
     }
 
     struct CourseView: View {
@@ -35,21 +84,14 @@ struct CourseListView: View {
 
         var body: some View {
             VStack(alignment: .leading, spacing: 8) {
-                Text(course.title ?? "Курс")
+                Text(course.ageGroup).font(.caption).foregroundStyle(.secondary).padding(2, 5).background(Capsule().stroke(lineWidth: 1).fill(.secondary))
+                Text(course.title)
                     .font(.headline)
-                Text(course.description ?? "")
+                Text(course.description)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                NavigationLink(destination: CourseDetailView(course: course)) {
-                    Text("Подробнее")
-                        .font(.footnote)
-                        .foregroundColor(.blue)
-                }
+                    .lineLimit(1)
             }
-            .padding()
-            .background(Color.white)
-            .cornerRadius(10)
-            .shadow(radius: 5)
         }
     }
 
@@ -149,7 +191,6 @@ struct CourseListView: View {
 }
 
 struct CourseSelectionFlow: View {
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Выбор направления")

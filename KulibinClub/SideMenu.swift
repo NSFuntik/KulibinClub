@@ -6,36 +6,57 @@
 //
 
 import FirebaseAuth
+import SwiftPro
 import SwiftUI
 
+#Preview(body: {
+    ZStack {
+        MainView()
+        SideMenu(isShowing: .constant(true), isLoggedIn:  .constant(true), path:  .constant(NavigationPath()), edgeTransition: .slide, content:  SideMenuContent(isLoggedIn: .constant(true), isShowing: .constant(true), path: .constant(NavigationPath()), notificationService: NotificationService()))
+       
+    }
+})
+
+
+
+/// Боковое меню навигационных разделов
 struct SideMenu<Content: View>: View {
     @Binding var isLoggedIn: Bool
     @Binding var isShowing: Bool
+    @Binding var path: NavigationPath
+
     var content: Content
-    var edgeTransition: AnyTransition = .move(edge: .leading)
+    var edgeTransition: AnyTransition = .move(edge: .leading).animation(.snappy)
 
     var body: some View {
         ZStack(alignment: .bottom) {
             if isShowing {
-                Color.black.opacity(0.3).ignoresSafeArea()
+                Color.secondary.opacity(0.33).ignoresSafeArea()
                     .onTapGesture { isShowing.toggle() }
-                content .transition(edgeTransition)
+                content.transition(edgeTransition)
                     .background(.clear)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-        .ignoresSafeArea().animation(.interactiveSpring, value: isShowing)
+        .ignoresSafeArea().animation(.snappy, value: isShowing)
     }
+
     init(
         isShowing: Binding<Bool>,
-        edgeTransition: AnyTransition,
         isLoggedIn: Binding<Bool> = .constant(true),
-        content: Content
-    ) {
+        path: Binding<NavigationPath>,
+        edgeTransition: AnyTransition = .move(edge: .leading),
+        content: Content? = nil
+    ) where Content == SideMenuContent {
         self._isShowing = isShowing
-        self.content = content
+        if let content {
+            self.content = content
+        } else {
+            self.content = SideMenuContent(isLoggedIn: isLoggedIn, isShowing: isShowing, path: path, notificationService: NotificationService())
+        }
         self.edgeTransition = edgeTransition
         self._isLoggedIn = isLoggedIn
+        self._path = path
     }
 }
 
@@ -43,71 +64,145 @@ struct SideMenuContent: View {
     @Binding var isLoggedIn: Bool
     @Binding var isShowing: Bool
     @Binding var path: NavigationPath
+    
     @ObservedObject var notificationService: NotificationService
 
     var body: some View {
         HStack {
             ZStack {
-                Rectangle().fill(.ultraThinMaterial).frame(width: 270).shadow(color: .accentColor.opacity(0.33), radius: 13, x: 0, y: 1)
+                Rectangle().fill(.thinMaterial).frame(width: 270)
+                    .shadow(color: .accentColor.opacity(0.33), radius: 13, x: 0, y: 1)
                 VStack(alignment: .leading, spacing: 0) {
                     TopTitle
-                    SiteRoutesList
-                    BottomRobot
+                    SiteRoutesList.padding(.trailing, -16)
+                   
                 }
-                .padding(.top, 77) .frame(width: 270)
-                .background( LinearGradient(colors: [ .white,.accentColor.opacity(0.66), .accentColor.opacity(0.66), .white, ],
-                        startPoint: .topTrailing, endPoint: .bottomLeading
-                    ).blur(radius: 44).opacity(0.13))
+                .safeAreaPadding(.top, 44).frame(width: 270)
+                .background(
+                    LinearGradient(colors: [.white, .accentColor.opacity(0.66), .accentColor.opacity(0.66), .white],
+                                   startPoint: .topTrailing, endPoint: .bottomLeading
+                    ).blur(radius: 44).opacity(0.13)
+                )
+                VStack {
+                    Spacer()
+                    BottomRobot
+                }.frame(width: 270)
             }
             Spacer()
         }
         .background(.clear)
     }
+
+    /**
+      A custom view representing a cell in the side bar.
+      This view contains information about a specific route and provides a NavigationLink.
+      - Parameters:
+         - route: The route associated with the cell.
+     */
+    fileprivate struct SideBarCell: View {
+        var route: Route
+        @State private var selected: Bool = false
+        /**
+         Initializes a new instance of `SideBarCell`.
+         - Parameter route: The route associated with the cell.
+         */
+        init(for route: Route) {
+            self.route = route
+        }
+        
+        var body: some View {
+            NavigationLink(value: route) {
+                label
+            }.listRowBackground(Color.clear)
+        }
+
+        public var label: some View {
+            Label(route.rawValue, systemImage: symbol.rawValue)
+                .labelStyle(SideBarCellStyle())
+                .foregroundStyle(.accent.secondary.opacity(0.88))
+                .listRowBackground(Color.clear).padding(.leading, -16)
+        }
+
+        var symbol: SFSymbol {
+            SFSymbol.findSymbol(by: route.MenuIcon) ?? .folder
+        }
+    }
+
+    /**
+     A custom label style for the side bar cell.
+     */
+    struct SideBarCellStyle: LabelStyle {
+        public func makeBody(configuration: Configuration) -> some View {
+            HStack(alignment: .center, spacing: 8) {
+                configuration.icon.font(.headline.weight(.medium)).symbolRenderingMode(.palette)
+                    .frame(width: 22, alignment: .center).colorMultiply(.accentColor).clipped().shadow(.sticker)
+                configuration.title.font(.headline.weight(.regular)).shadow(.none).foregroundStyle(.primary)
+                Spacer()
+            }
+        }
+    }
+
     fileprivate typealias Route = SideMenuTab
     var SiteRoutesList: some View {
         List {
-            Button("Главная") { isShowing.toggle() }.listRowBackground(Color.clear)
-            DisclosureGroup("Курсы") {
-                NavigationLink("Робототехника", value: Route.Робототехника)
-                NavigationLink("Программирование", value: Route.Программирование)
-                NavigationLink("Компьютерная графика и 3D", value: Route.КомпьютернаяГрафикаи3D)
-                NavigationLink("Курсы для взрослых", value: Route.КурсыДляВзрослых)
+            Button { isShowing.toggle() } label: {
+                SideBarCell(for: .Главная).label
             }.listRowBackground(Color.clear)
-            NavigationLink("Уведомления", value: Route.Уведомления).listRowBackground(Color.clear)
-            DisclosureGroup("О клубе") {
-                NavigationLink("История создания", value: Route.ИсторияСоздания)
-                NavigationLink("Новости", value: Route.Новости)
-                NavigationLink("Фотогалерея", value: Route.Фотогалерея)
-                NavigationLink("Календарь событий", value: Route.КалендарьСобытий)
-                NavigationLink("Бонусная программа", value: Route.БонуснаяПрограмма)
-                NavigationLink("Вопросы и ответы", value: Route.ВопросыИответы)
+            DisclosureGroup {
+                SideBarCell(for: .Робототехника)
+                SideBarCell(for: .Программирование)
+                SideBarCell(for: .КомпьютернаяГрафикаи3D)
+                SideBarCell(for: .КурсыДляВзрослых)
+            } label: {
+                SideBarCell(for: .Курсы).label
             }.listRowBackground(Color.clear)
-            NavigationLink("Каталог", value: Route.Каталог).listRowBackground(Color.clear)
-            DisclosureGroup("Документы") {
-                NavigationLink("Договор-оферта", value: Route.Документы)
-                NavigationLink("Сведения об образовательной организации", value: Route.СведенияОбОбразовательнойОрганизации)
-                NavigationLink("Договор-Оферта", value: Route.ДоговорОферта)
-                NavigationLink("Соглашение о конфиденциальности", value: Route.СоглашениеоКонфиденциальности)
-                NavigationLink("Обработчики персональных данных", value: Route.ОбработчикиПерсональныхДанных)
+            SideBarCell(for: .Уведомления)
+                .listRowBackground(Color.clear)
+            DisclosureGroup {
+                SideBarCell(for: .ИсторияСоздания)
+                SideBarCell(for: .Новости)
+                SideBarCell(for: .Фотогалерея)
+                SideBarCell(for: .КалендарьСобытий)
+                SideBarCell(for: .БонуснаяПрограмма)
+                SideBarCell(for: .ВопросыИответы)
+            } label: {
+                SideBarCell(for: .оКлубе).label
             }.listRowBackground(Color.clear)
-            DisclosureGroup("Партнеры") {
-                NavigationLink("Общественный фонд", value: Route.ОбщественныйФонд)
-                NavigationLink("Наши партнеры", value: Route.НашиПартнеры)
+            SideBarCell(for: .Каталог)
+                .listRowBackground(Color.clear)
+            DisclosureGroup {
+                SideBarCell(for: .Документы)
+                SideBarCell(for: .СведенияОбОбразовательнойОрганизации)
+                SideBarCell(for: .ДоговорОферта)
+                SideBarCell(for: .СоглашениеоКонфиденциальности)
+                SideBarCell(for: .ОбработчикиПерсональныхДанных)
+            } label: {
+                SideBarCell(for: .Документы).label
             }.listRowBackground(Color.clear)
-            NavigationLink("Настройки", value: Route.Настройки).listRowBackground(Color.clear)
-            Button(action: handleLogout) { Text("Выйти") }.listRowBackground(Color.clear)
+            DisclosureGroup {
+                SideBarCell(for: .ОбщественныйФонд)
+                SideBarCell(for: .НашиПартнеры)
+            } label: {
+                SideBarCell(for: .Партнеры).label
+            }.listRowBackground(Color.clear)
+            SideBarCell(for: .Настройки)
+
+            Button(action: handleLogout) { SideBarCell(for: .Выход).label }.listRowBackground(Color.clear)
             Spacer(minLength: 222).listRowBackground(Color.clear)
         }
-        .listRowBackground(Color.clear).listStyle(SidebarListStyle()).scrollContentBackground(.hidden).backgroundStyle(.clear)
+        .listRowBackground(Color.clear)
+        .listStyle(SidebarListStyle())
+        .scrollContentBackground(.hidden)
+        .backgroundStyle(.clear)
         .scrollIndicators(.visible)
     }
 
     let BottomRobot: some View = {
         Image(.infoRobot)
-            .resizable(capInsets: .init(top: 0, leading: 0, bottom: 44, trailing: 0), resizingMode: .stretch) // .rotationEffect(.degrees(90.0))
-            .scaledToFill()
-            .frame(height: 44)
-            .padding(.bottom, 66)
+            .resizable() // .rotationEffect(.degrees(90.0))
+            .scaledToFit()
+            .frame(height: .screenHeight / 5)
+            .padding(.bottom, -16)
             .shadow(radius: 3)
             .padding(.leading, 44)
             .padding(.trailing, 13)
@@ -115,19 +210,27 @@ struct SideMenuContent: View {
 
     let TopTitle: some View = {
         VStack(alignment: .leading, spacing: 6, content: {
-            Text("Kulibin.club")
-                .font(.title.weight(.medium).monospaced()).minimumScaleFactor(0.7)
-                .foregroundStyle(.accent)
-                .shadow(radius: 1)
-                .lineLimit(1)
+            Image(.logo2)
+                .resizable().renderingMode(.template).shadow(.sticker)
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 66)
+                .spacing()
+//            Text("Kulibin.club")
+//                .font(.title.weight(.black).monospaced()).minimumScaleFactor(0.7).fixedSize(horizontal: true, vertical: true)
+//                .foregroundStyle(.accent).blendMode(.plusDarker).vibrantForeground(thick: true)
+//                .shadow(.elevated).shadow(.sticker)
+//                .lineLimit(1)
             Text("Клуб научно-технического творчества")
-                .font(.caption)
+                .font(.caption.weight(.medium))
                 .foregroundStyle(.tertiary)
-        }).padding()
-            .background(.thinMaterial,
-                        in: RoundedRectangle(cornerRadius: 14)).clipped()
-            .shadow(color: .secondary.opacity(0.6), radius: 4, x: 0, y: 3).padding()
-
+        }).vibrantForeground(thick: true)
+            .padding([.horizontal, .top])
+//        .background(.ultraThinMaterial)
+        .background(content: { Image(.line).resizable().scaledToFit().opacity(0.33) })
+//        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        
+        .shadow(.elevated)
+       
     }()
 
     private func handleLogout() {
@@ -140,7 +243,7 @@ struct SideMenuContent: View {
     }
 }
 
-enum SideMenuTab: String {
+enum SideMenuTab: String, CaseIterable {
     case Главная
     case Курсы
     case Робототехника
@@ -165,4 +268,89 @@ enum SideMenuTab: String {
     case ОбщественныйФонд = "Общественный фонд"
     case НашиПартнеры = "Наши партнеры"
     case Настройки
+    case Выход
+    var systemValue: String {
+        switch self {
+        case .Главная: "homekit"
+        case .Курсы: "Courses"
+        case .Робототехника: "Robotics"
+        case .Программирование: "Programming"
+        case .КомпьютернаяГрафикаи3D: "Computer Graphics 3D"
+        case .КурсыДляВзрослых: "CoursesForAdults"
+        case .Уведомления: "Notifications"
+        case .оКлубе: "About the club"
+        case .ИсторияСоздания: "History of creation"
+        case .Новости: "News"
+        case .Фотогалерея: "Photo gallery"
+        case .КалендарьСобытий: "Calendar of events"
+        case .БонуснаяПрограмма: "Bonus program"
+        case .ВопросыИответы: "Questions and answers"
+        case .Каталог: "Catalog"
+        case .Документы: "Documentation"
+        case .СведенияОбОбразовательнойОрганизации: "Information About the Educational Organization"
+        case .ДоговорОферта: "AgreementOffer"
+        case .СоглашениеоКонфиденциальности: "Privacy agreement"
+        case .ОбработчикиПерсональныхДанных: "Processors of Personal Data"
+        case .Партнеры: "Partners"
+        case .ОбщественныйФонд: "Public fund"
+        case .НашиПартнеры: "Our partners"
+        case .Настройки: "Settings"
+        case .Выход: "Logout"
+        }
+    }
+
+    var MenuIcon: String {
+        return switch self {
+        case .Главная: "homekit"
+        case .Курсы: "book"
+        case .Робототехника: "gearshape.fill"
+        case .Программирование: "terminal.fill"
+        case .КомпьютернаяГрафикаи3D: "cube.fill"
+        case .КурсыДляВзрослых: "person.2.fill"
+        case .Уведомления: "bell"
+        case .оКлубе: "suit.club"
+        case .ИсторияСоздания: "clock.fill"
+        case .Новости: "newspaper.fill"
+        case .Фотогалерея: "photo.fill"
+        case .КалендарьСобытий: "calendar.badge.clock"
+        case .БонуснаяПрограмма: "gift.fill"
+        case .ВопросыИответы: "person.fill.questionmark"
+        case .Каталог: "cart"
+        case .Документы: "books.vertical"
+        case .СведенияОбОбразовательнойОрганизации: "building.columns.fill"
+        case .ДоговорОферта: "doc.text.fill"
+        case .СоглашениеоКонфиденциальности: "bolt.shield"
+        case .ОбработчикиПерсональныхДанных: "person.crop.circle.fill.badge.exclam"
+        case .Партнеры: "figure.wave"
+        case .ОбщественныйФонд: "shareplay"
+        case .НашиПартнеры: "briefcase"
+        case .Настройки: "gearshape"
+        case .Выход: "door.right.hand.open"
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

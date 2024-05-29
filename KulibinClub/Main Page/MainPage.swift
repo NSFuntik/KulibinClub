@@ -10,12 +10,9 @@ import SwiftPro
 import SwiftUI
 #Preview {
     NavigationStack {
-        MainView()
-            .toolbar(content: {
-                ToolbarItem(placement: .navigation) {
-                    HeaderView(sideMenu: .constant(false))
-                }
-            })
+        VStack {
+            MainView()
+        }
     }
 }
 
@@ -27,10 +24,10 @@ struct MainView: View {
             VStack(spacing: 20) {
                 TrialLessonForm()
                 AboutBlock()
-                DirectionsBlock()
-                EventsBlock()
-                NewsBlock()
-                PedagogicStaffBlock()
+//                DirectionsBlock()
+//                EventsBlock()
+//                NewsBlock()
+//                PedagogicStaffBlock()
                 FAQBlock()
                 Footer()
             }
@@ -43,11 +40,22 @@ struct MainView: View {
     var PageTopIllustration: some View {
         Image(.mainPageIllustration)
             .resizable()
-            .scaledToFill()
+            .scaledToFill().frame(width: screen.bounds.width, height: 400)
             .contentShape(RoundedRectangle(cornerRadius: 12))
             .containerShape(RoundedRectangle(cornerRadius: 12))
             .clipped()
-            .withScreen()
+
+            .overlay(alignment: .bottom) {
+                VStack(alignment: .center, spacing: 33) {
+                    
+                    Text("Развивающие занятия для детей и подростков")
+                        .font(.largeTitle).bold().fontDesign(.rounded).multilineTextAlignment(.trailing)
+                        .padding(33).padding(.top, 40).lineLimit(2).minimumScaleFactor(0.77)
+                        .vibrantForeground(thick: true)
+                    Image(.kulibinCharacter)
+                        .resizable().scaledToFill().frame(box: 180)
+                }.shadow(.sticker)
+            }
     }
 
     struct AboutBlock: View {
@@ -85,7 +93,7 @@ struct MainView: View {
                         )
                     }.padding(.horizontal, 16)
                 }
-            }
+            }.frame(width: .screenWidth)
         }
 
         struct FeatureCard: View {
