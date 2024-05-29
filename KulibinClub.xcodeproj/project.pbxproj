@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		F505A2D22C0673E500BE1933 /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505A2D12C0673E500BE1933 /* HTMLContent.swift */; };
 		F505A2D42C06C5E400BE1933 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F505A2D32C06C5E400BE1933 /* Localizable.xcstrings */; };
+		F505A2D72C07529800BE1933 /* SwiftPro in Frameworks */ = {isa = PBXBuildFile; productRef = F505A2D62C07529800BE1933 /* SwiftPro */; };
 		F55B746F2C03F0B900A572AD /* TrialLessonForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B746E2C03F0B900A572AD /* TrialLessonForm.swift */; };
 		F55B74722C03FCDD00A572AD /* SwiftPro in Frameworks */ = {isa = PBXBuildFile; productRef = F55B74712C03FCDD00A572AD /* SwiftPro */; };
 		F585EBEA2C05721D001F3985 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585EBE92C05721D001F3985 /* FirestoreService.swift */; };
@@ -109,6 +110,7 @@
 				F585EBF12C05765D001F3985 /* FirebaseCrashlytics in Frameworks */,
 				F585EBF72C05765D001F3985 /* FirebaseStorage in Frameworks */,
 				F585EBEF2C05765D001F3985 /* FirebaseAuth in Frameworks */,
+				F505A2D72C07529800BE1933 /* SwiftPro in Frameworks */,
 				F55B74722C03FCDD00A572AD /* SwiftPro in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +261,7 @@
 				F585EBF22C05765D001F3985 /* FirebaseFirestoreSwift */,
 				F585EBF42C05765D001F3985 /* FirebaseMessaging */,
 				F585EBF62C05765D001F3985 /* FirebaseStorage */,
+				F505A2D62C07529800BE1933 /* SwiftPro */,
 			);
 			productName = KulibinClub;
 			productReference = F58C01B62C037744001D76F0 /* KulibinClub.app */;
@@ -334,8 +337,8 @@
 			);
 			mainGroup = F58C01AD2C037744001D76F0;
 			packageReferences = (
-				F55B74702C03FCDD00A572AD /* XCLocalSwiftPackageReference "../SwiftPro" */,
 				F585EBEB2C05765D001F3985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F505A2D52C07529800BE1933 /* XCRemoteSwiftPackageReference "SwiftPro" */,
 			);
 			productRefGroup = F58C01B72C037744001D76F0 /* Products */;
 			projectDirPath = "";
@@ -743,14 +746,15 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		F55B74702C03FCDD00A572AD /* XCLocalSwiftPackageReference "../SwiftPro" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SwiftPro;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
+		F505A2D52C07529800BE1933 /* XCRemoteSwiftPackageReference "SwiftPro" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NSFuntik/SwiftPro";
+			requirement = {
+				branch = dev;
+				kind = branch;
+			};
+		};
 		F585EBEB2C05765D001F3985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -762,6 +766,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F505A2D62C07529800BE1933 /* SwiftPro */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F505A2D52C07529800BE1933 /* XCRemoteSwiftPackageReference "SwiftPro" */;
+			productName = SwiftPro;
+		};
 		F55B74712C03FCDD00A572AD /* SwiftPro */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftPro;
