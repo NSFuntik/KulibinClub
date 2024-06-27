@@ -10,7 +10,6 @@
 		F505A2D22C0673E500BE1933 /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505A2D12C0673E500BE1933 /* HTMLContent.swift */; };
 		F505A2D42C06C5E400BE1933 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F505A2D32C06C5E400BE1933 /* Localizable.xcstrings */; };
 		F505A2E12C0758B400BE1933 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505A2E02C0758B400BE1933 /* FloatingTextField.swift */; };
-		F505A2E82C075E3B00BE1933 /* SwiftPro in Frameworks */ = {isa = PBXBuildFile; productRef = F505A2E72C075E3B00BE1933 /* SwiftPro */; };
 		F55B746F2C03F0B900A572AD /* TrialLessonForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B746E2C03F0B900A572AD /* TrialLessonForm.swift */; };
 		F585EBEA2C05721D001F3985 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585EBE92C05721D001F3985 /* FirestoreService.swift */; };
 		F585EBED2C05765D001F3985 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F585EBEC2C05765D001F3985 /* FirebaseAnalyticsSwift */; };
@@ -38,10 +37,12 @@
 		F58C021B2C03827A001D76F0 /* Bonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C021A2C03827A001D76F0 /* Bonus.swift */; };
 		F58C021D2C0382BF001D76F0 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C021C2C0382BF001D76F0 /* Events.swift */; };
 		F58C021F2C0383C6001D76F0 /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C021E2C0383C6001D76F0 /* FAQ.swift */; };
-		F58C02212C038421001D76F0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C02202C038421001D76F0 /* Product.swift */; };
+		F58C02212C038421001D76F0 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C02202C038421001D76F0 /* ProductList.swift */; };
 		F58C022C2C039F34001D76F0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C022B2C039F34001D76F0 /* HeaderView.swift */; };
 		F58C022E2C03A3BA001D76F0 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C022D2C03A3BA001D76F0 /* MainPage.swift */; };
 		F58C02302C03A3ED001D76F0 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C022F2C03A3ED001D76F0 /* SideMenu.swift */; };
+		F5EA0B9D2C2D888E009FEBEE /* FlomniChat.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5EA0B9B2C2D8830009FEBEE /* FlomniChat.xcframework */; };
+		F5EA0B9E2C2D888E009FEBEE /* FlomniChat.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5EA0B9B2C2D8830009FEBEE /* FlomniChat.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F5EA0B9E2C2D888E009FEBEE /* FlomniChat.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,10 +109,11 @@
 		F58C021A2C03827A001D76F0 /* Bonus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bonus.swift; sourceTree = "<group>"; };
 		F58C021C2C0382BF001D76F0 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		F58C021E2C0383C6001D76F0 /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
-		F58C02202C038421001D76F0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		F58C02202C038421001D76F0 /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
 		F58C022B2C039F34001D76F0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F58C022D2C03A3BA001D76F0 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		F58C022F2C03A3ED001D76F0 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		F5EA0B9B2C2D8830009FEBEE /* FlomniChat.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FlomniChat.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +123,9 @@
 			files = (
 				F585EBF52C05765D001F3985 /* FirebaseMessaging in Frameworks */,
 				F585EBF32C05765D001F3985 /* FirebaseFirestoreSwift in Frameworks */,
+				F5EA0B9D2C2D888E009FEBEE /* FlomniChat.xcframework in Frameworks */,
 				F585EBED2C05765D001F3985 /* FirebaseAnalyticsSwift in Frameworks */,
 				F585EBF12C05765D001F3985 /* FirebaseCrashlytics in Frameworks */,
-				F505A2E82C075E3B00BE1933 /* SwiftPro in Frameworks */,
 				F585EBF72C05765D001F3985 /* FirebaseStorage in Frameworks */,
 				F585EBEF2C05765D001F3985 /* FirebaseAuth in Frameworks */,
 			);
@@ -192,6 +195,7 @@
 				F505A2D12C0673E500BE1933 /* HTMLContent.swift */,
 				F58C02032C037993001D76F0 /* Models.swift */,
 				F58C02052C037993001D76F0 /* ViewModels.swift */,
+				F5EA0B9B2C2D8830009FEBEE /* FlomniChat.xcframework */,
 				F58C01E82C037771001D76F0 /* Resources */,
 				F58C01C12C037745001D76F0 /* Preview Content */,
 			);
@@ -246,7 +250,7 @@
 				F58C021C2C0382BF001D76F0 /* Events.swift */,
 				F58C021A2C03827A001D76F0 /* Bonus.swift */,
 				F58C021E2C0383C6001D76F0 /* FAQ.swift */,
-				F58C02202C038421001D76F0 /* Product.swift */,
+				F58C02202C038421001D76F0 /* ProductList.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -275,7 +279,6 @@
 				F585EBF22C05765D001F3985 /* FirebaseFirestoreSwift */,
 				F585EBF42C05765D001F3985 /* FirebaseMessaging */,
 				F585EBF62C05765D001F3985 /* FirebaseStorage */,
-				F505A2E72C075E3B00BE1933 /* SwiftPro */,
 			);
 			productName = KulibinClub;
 			productReference = F58C01B62C037744001D76F0 /* KulibinClub.app */;
@@ -352,7 +355,6 @@
 			mainGroup = F58C01AD2C037744001D76F0;
 			packageReferences = (
 				F585EBEB2C05765D001F3985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				F505A2E62C075E3A00BE1933 /* XCRemoteSwiftPackageReference "SwiftPro" */,
 			);
 			productRefGroup = F58C01B72C037744001D76F0 /* Products */;
 			projectDirPath = "";
@@ -400,7 +402,7 @@
 			files = (
 				F58C021D2C0382BF001D76F0 /* Events.swift in Sources */,
 				F58C02102C037D27001D76F0 /* SettingsView.swift in Sources */,
-				F58C02212C038421001D76F0 /* Product.swift in Sources */,
+				F58C02212C038421001D76F0 /* ProductList.swift in Sources */,
 				F58C02302C03A3ED001D76F0 /* SideMenu.swift in Sources */,
 				F505A2E12C0758B400BE1933 /* FloatingTextField.swift in Sources */,
 				F58C020B2C037994001D76F0 /* AuthView.swift in Sources */,
@@ -772,14 +774,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F505A2E62C075E3A00BE1933 /* XCRemoteSwiftPackageReference "SwiftPro" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/NSFuntik/SwiftPro";
-			requirement = {
-				branch = dev;
-				kind = branch;
-			};
-		};
 		F585EBEB2C05765D001F3985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -791,11 +785,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F505A2E72C075E3B00BE1933 /* SwiftPro */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F505A2E62C075E3A00BE1933 /* XCRemoteSwiftPackageReference "SwiftPro" */;
-			productName = SwiftPro;
-		};
 		F585EBEC2C05765D001F3985 /* FirebaseAnalyticsSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F585EBEB2C05765D001F3985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
